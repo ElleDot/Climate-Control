@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F99BB53D-176E-7206-553C-6F7C8950245E}</ProjectGuid>
+    <ProjectGuid>{F13E22A4-6E87-DFFA-A97A-060C8E37B03F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -66,37 +66,37 @@
     <Compile Include="Assets\Scripts\timerScript.cs" />
     <Compile Include="Assets\Scripts\viewLoad.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate Control/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f3/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
