@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - gameScript
+    - randomLoader
     - viewLoad
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -105,6 +106,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12656}
     - Class: 114
       Script: {instanceID: 13032}
+    - Class: 114
+      Script: {instanceID: 32528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -130,7 +133,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 20
       Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -476,7 +491,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 4dc0c8952978813415b2c92dee47cc64
+      Hash: e06e5b2cb5e76ec0e487bd4141130d4b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameScript
@@ -762,6 +777,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9be43a6afbbf43cfbbb4a8a8a08c0085
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: randomLoader
   platform: 9
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

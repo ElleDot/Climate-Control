@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,29 +11,63 @@ public class gameScript : MonoBehaviour {
     private int secondsPassed;
     private string minuteString;
     private string secondString;
-    private bool isPaused;
+    public bool isPaused;
+    public bool gameStarted;
     private bool pauseFadeAway;
     private int playerScore;
-    private float distanceFromCamera = 10f;
+    private int displayedScore;
 
     public Text timeLabel;
     public Text scoreLabel;
     public Text pauseTimeLabel;
     public Text pauseScoreLabel;
     public GameObject pauseMenu;
+    public GameObject countdownPlayer;
     public VideoPlayer starsAnim1;
     public VideoPlayer starsAnim2;
+    public VideoPlayer countdownTimer;
+    
 
     // Start is called before the first frame update
     void Start() {
 
         minutesPassed = 0;
         secondsPassed = 0;
+        Invoke("countdownStart", 1);
 
-        Invoke("timerIncrement", 3);
+    }
 
-        Vector3 centerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, distanceFromCamera));
+    // Called when the countdown video finishes playing
+    public void CheckOver(UnityEngine.Video.VideoPlayer vp) {
 
+        timerIncrement();
+        CancelInvoke("checkOver");
+        countdownPlayer.SetActive(false);
+
+    }
+
+    // Begins the countdown timer
+    public void countdownStart() {
+
+        countdownTimer.playbackSpeed = 1;
+        //Invoke repeating of checkOver method
+        countdownTimer.loopPointReached += CheckOver;
+
+    }
+
+    void Update() {
+
+        if (displayedScore < playerScore)
+        {
+            displayedScore++;
+            if (displayedScore > playerScore) {
+                displayedScore = playerScore;
+            }
+                
+        }
+
+        scoreLabel.text = displayedScore.ToString("n0") + "pts";
+        pauseScoreLabel.text = displayedScore.ToString("n0") + "pts";
 
     }
 
@@ -67,14 +102,8 @@ public class gameScript : MonoBehaviour {
             playerScore += (minutesPassed * 20) + 20;
         }
 
-        scoreLabel.text = playerScore.ToString("n0") + "pts";
-        pauseScoreLabel.text = playerScore.ToString("n0") + "pts";
-
-    }
-
-    public void gameStart() {
-
-        timerIncrement();
+        //scoreLabel.text = playerScore.ToString("n0") + "pts";
+        //pauseScoreLabel.text = playerScore.ToString("n0") + "pts";
 
     }
 
