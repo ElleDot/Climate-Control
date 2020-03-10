@@ -63,7 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\timerScript.cs" />
+    <Compile Include="Assets\Scripts\gameScript.cs" />
+    <Compile Include="Assets\Scripts\randomLoader.cs" />
     <Compile Include="Assets\Scripts\viewLoad.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

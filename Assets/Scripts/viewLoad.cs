@@ -10,7 +10,6 @@ public class viewLoad : MonoBehaviour {
     private bool fadeAway;
     public Image FadeView;
     public GameObject FadeViewObj;
-    
 
     // Start is called before the first frame update
     void Start() {
