@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{F13E22A4-6E87-DFFA-A97A-060C8E37B03F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/randomLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/gameScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/gameScript.cs" Line="35" Column="27" />
-      <File FileName="Assets/Scripts/viewLoad.cs" Line="11" Column="27" />
-      <File FileName="Assets/Scripts/randomLoader.cs" Line="44" Column="49" />
+      <File FileName="Assets/Scripts/gameScript.cs" Line="208" Column="29" />
+      <File FileName="Assets/Scripts/viewLoad.cs" />
+      <File FileName="Assets/Scripts/randomLoader.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +11,7 @@
           <Node name="Climate-Control" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="randomLoader.cs" selected="True" />
+                <Node name="gameScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="656824ab-9d3c-4709-8646-473068f17544" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5804998-dc9f-457d-bd6b-63e3559efb15" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

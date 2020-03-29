@@ -52,9 +52,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -103,11 +103,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12208}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 32528}
+      Script: {instanceID: 13034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,14 +166,16 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13034}
     - Class: 114
-      Script: {instanceID: 13372}
+      Script: {instanceID: 18548}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -215,9 +217,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -268,9 +270,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -323,9 +325,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12154}
     - Class: 114
-      Script: {instanceID: 12656}
+      Script: {instanceID: 12658}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13034}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -593,6 +595,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 9be43a6afbbf43cfbbb4a8a8a08c0085
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: randomLoader
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -777,12 +785,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 9be43a6afbbf43cfbbb4a8a8a08c0085
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: randomLoader
   platform: 9
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

@@ -1310,8 +1310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de639f3f5ab84b2c87f85e36e26932d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minutesPassed: 0
+  secondsPassed: 0
   isPaused: 0
   gameStarted: 0
+  playerScore: 0
   timeLabel: {fileID: 360202517}
   scoreLabel: {fileID: 1755615900}
   pauseTimeLabel: {fileID: 2124383324}
@@ -1321,6 +1324,7 @@ MonoBehaviour:
   starsAnim1: {fileID: 841047687}
   starsAnim2: {fileID: 1282000381}
   countdownTimer: {fileID: 1680459509}
+  pauseButton: {fileID: 1243662514}
 --- !u!114 &1243662520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,7 +1332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243662514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 891ee80901d3c4afe8a8f0b04865fbd5, type: 3}
   m_Name: 
