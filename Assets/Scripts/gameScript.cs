@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
@@ -10,13 +11,16 @@ public class gameScript : MonoBehaviour {
     //Variables for the core game and timer mechanics
     public int minutesPassed;
     public int secondsPassed;
-    private string minuteString;
-    private string secondString;
-    public bool isPaused;
-    public bool gameStarted;
-    private bool pauseFadeAway;
+    public string minuteString;
+    public string secondString;
+    public static bool isPaused;
+    public bool gameStarted = false;
+    public bool pauseFadeAway;
+    public bool pauseButtonFadeAway;
     public int playerScore;
-    private int displayedScore;
+    public int displayedScore;
+    public int livesLeft;
+    public int goodObjects;
 
     //GameObjects and other elements
     public Text timeLabel;
@@ -28,29 +32,40 @@ public class gameScript : MonoBehaviour {
     public VideoPlayer starsAnim1;
     public VideoPlayer starsAnim2;
     public VideoPlayer countdownTimer;
-    public GameObject pauseButton;
+    public Button pauseButton;
+    public GameObject lifeOneIcon;
+    public GameObject lifeTwoIcon;
+    public GameObject lifeThreeIcon;
+    public Sprite pauseButtonSprite;
+    public Sprite playButtonSprite;
+    public Image playPauseImage;
+    public Image FadeView;
+    public Image Earth;
+    public Sprite HealthyEarth;
+    public Sprite OKEarth;
+    public Sprite UnhealthyEarth;
 
     //Variables for sorting hit detection and platforms
-    public static int targetsToCalculate;
-    private GameObject[] platforms;
-    private float spawnRate;
-    private float time;
-    private float distanceFromCamera = 10f;
-    private Vector3 objectPos;
-
+    public int targetsTapped;
+    public GameObject[] targets;
+    public float spawnRate;
+    public float time;
+    public Vector3 objectPos;
 
     // Start is called before the first frame update
     void Start() {
 
         minutesPassed = 0;
         secondsPassed = 0;
+        livesLeft = 3;
 
-        Vector3 centerPos = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, distanceFromCamera));
+        pauseButton.interactable = false;
+        playPauseImage = GetComponent<Image>();
 
         //Load Platforms into Array
-        platforms = Resources.LoadAll<GameObject>("targets");
+        targets = Resources.LoadAll<GameObject>("targets");
         // Set Spawn Rate
-        spawnRate = 5.0f;
+        spawnRate = 2.0f;
 
         Invoke("countdownStart", 1);
 
@@ -62,6 +77,9 @@ public class gameScript : MonoBehaviour {
         timerIncrement();
         CancelInvoke("checkOver");
         countdownPlayer.SetActive(false);
+        StartCoroutine(FadeButton(true));
+        pauseButton.interactable = true;
+        gameStarted = true;
 
     }
 
@@ -76,62 +94,71 @@ public class gameScript : MonoBehaviour {
 
     void Update() {
 
-        if (!isPaused && !gameStarted)
-        {
+        if (!isPaused && gameStarted) {
 
             time += Time.deltaTime;
 
-            if (time > spawnRate)
-            {
+            if (time > spawnRate) {
 
-                print("Tried generating new platform");
+                print("Tried generating new target");
 
-                //Generate Random Number and Instantiate Associated Array Item
-                int objectNum = UnityEngine.Random.Range(0, 0);
-                GameObject target = Instantiate(platforms[objectNum]);
-                //platform.AddComponent<yMovement>();
-                //Create Random Start Positon for Object and apply to Object
-
-                //Roll for above or below spawn
+                //Roll for left or right spawn, then
+                //create random start positon for Object and apply to Object
                 if (UnityEngine.Random.Range(0, 2) == 1) {
-                    objectPos = new Vector3((UnityEngine.Random.Range(-8, 8)), 5, 10);
+                    objectPos = new Vector3(-10, UnityEngine.Random.Range(-10, 10), 10);
                 } else {
-                    objectPos = new Vector3((UnityEngine.Random.Range(-8, 8)), -5, 10);
+                    objectPos = new Vector3(10, UnityEngine.Random.Range(-10, 10), 10);
                 }
 
+                //Generate Random Number and Instantiate Associated Array Item
+                int objectNum = UnityEngine.Random.Range(0, 2);
+                GameObject target = Instantiate(targets[objectNum]);
+
+                //platform.AddComponent<yMovement>();
                 target.transform.position = objectPos;
+
                 //Reset Time Variable
                 time = 0.0f;
             }
 
         }
 
-        //Test to see if the target has been tapped
-        if (Input.GetMouseButtonDown(0)) {
+        //Test to see if the target has been tapped, so long as game is not paused.
+        if (!isPaused) {
+            if (Input.GetMouseButtonDown(0)) {
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit)) {
-                //Target has been tapped and can be destroyed
-                Destroy(hit.collider.gameObject);
+                if (Physics.Raycast(ray, out hit)) {
+                    //Target has been tapped and can be destroyed
+                    Destroy(hit.collider.gameObject);
 
-                playerScore += 100 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
+                    playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
 
+                }
             }
-
         }
+        
 
         if (displayedScore < playerScore) {
-            displayedScore++;
+
+            displayedScore += 2;
             if (displayedScore > playerScore) {
                 displayedScore = playerScore;
             }
                 
+        } else if (displayedScore > playerScore) {
+
+            displayedScore -= 1;
+            if (displayedScore < playerScore) {
+                displayedScore = playerScore;
+            }
+
         }
 
         scoreLabel.text = displayedScore.ToString("n0") + "pts";
-        pauseScoreLabel.text = displayedScore.ToString("n0") + "pts";
+        pauseScoreLabel.text = playerScore.ToString("n0") + "pts";
 
     }
 
@@ -164,6 +191,15 @@ public class gameScript : MonoBehaviour {
         //Grant player score based on time as well
         playerScore += (minutesPassed * 20) + 20;
 
+        //Decrease the duration between spawns every 10s
+        if (secondsPassed % 10 == 0) {
+            print("DIFFICULTY INCREASED!");
+            print(spawnRate);
+            if (spawnRate > 0.4f) {
+                spawnRate -= 0.2f;
+            }
+        }
+
         //scoreLabel.text = playerScore.ToString("n0") + "pts";
         //pauseScoreLabel.text = playerScore.ToString("n0") + "pts";
 
@@ -171,12 +207,14 @@ public class gameScript : MonoBehaviour {
 
     public void playPause() {
 
-        if (!isPaused){
+        if (!isPaused) {
 
             print("Game PAUSED!");
             starsAnim1.Pause();
             starsAnim2.Pause();
             isPaused = true;
+
+            playPauseImage.sprite = playButtonSprite;
 
             CancelInvoke("timerIncrement");
 
@@ -191,6 +229,8 @@ public class gameScript : MonoBehaviour {
             starsAnim1.Play();
             starsAnim2.Play();
 
+            playPauseImage.sprite = pauseButtonSprite;
+
             Invoke("timerIncrement", 1);
 
             // fades the image out when resuming
@@ -202,10 +242,77 @@ public class gameScript : MonoBehaviour {
     }
 
     public void enableDisable() {
+
         if (!pauseFadeAway) {
             pauseMenu.SetActive(false);
             isPaused = false;
         }
+
+    }
+
+    public void goodObjectHit() {
+
+        goodObjects++;
+
+        if (goodObjects % 10 == 0) {
+
+            livesLeft++;
+
+            if (livesLeft == 3) {
+                lifeThreeIcon.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                Earth.sprite = HealthyEarth;
+            } else if (livesLeft == 2) {
+                lifeTwoIcon.GetComponent<Image>().color = new Color(255, 255, 255, 1);
+                Earth.sprite = OKEarth;
+            }
+
+        }
+
+        playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
+
+    }
+
+    //Called when a negative target reaches earth
+    public void lifeLost() {
+
+        livesLeft -= 1;
+        playerScore = Mathf.RoundToInt((float)playerScore * 0.95f);
+
+        //Check how many lives the player now has
+        if (livesLeft == 2) {
+            lifeThreeIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
+            Earth.sprite = OKEarth;
+        } else if (livesLeft == 1) {
+            lifeTwoIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
+            Earth.sprite = UnhealthyEarth;
+        } else {
+            lifeOneIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
+            print("GAME OVER!");
+            CancelInvoke("timerIncrement");
+            gameStarted = false;
+            StartCoroutine(FadeButton(false));
+            pauseButton.interactable = false;
+
+            //Save values for the game over screen
+
+            Invoke("loadGameOver", 1);
+            StartCoroutine(gameOverFade(true));
+
+        }
+
+    }
+
+    IEnumerator gameOverFade(bool gameOverFade) {
+
+        // increasing i
+        for (float i = 0; i <= 1; i += Time.deltaTime) {
+            // set color with i as alpha
+            FadeView.GetComponent<Image>().color = new Color(0, 0, 0, i);
+            yield return null;
+        }
+
+        SceneManager.LoadScene("GameOver");
+
     }
 
     IEnumerator FadeImage(bool pauseFadeAway) {
@@ -228,6 +335,29 @@ public class gameScript : MonoBehaviour {
             for (float i = 0; i <= 0.4f; i += Time.deltaTime) {
                 // set to white, but with i as alpha
                 pauseMenu.GetComponent<Image>().color = new Color(255, 255, 255, i);
+                yield return null;
+            }
+        }
+    }
+
+    IEnumerator FadeButton(bool pauseButtonFadeAway) {
+
+        // fade out
+        if (!pauseButtonFadeAway) {
+            // decreasing i
+            for (float i = 1; i >= 0; i -= Time.deltaTime) {
+                // set to white, but with i as alpha
+                pauseButton.GetComponent<Image>().color = new Color(255, 255, 255, i);
+                yield return null;
+            }
+        }
+
+        // fade in
+        else {
+            // increasing i
+            for (float i = 0; i <= 1; i += Time.deltaTime) {
+                // set to white, but with i as alpha
+                pauseButton.GetComponent<Image>().color = new Color(255, 255, 255, i);
                 yield return null;
             }
         }

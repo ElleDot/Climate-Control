@@ -1,9 +1,11 @@
 ﻿<Properties StartupConfiguration="{F13E22A4-6E87-DFFA-A97A-060C8E37B03F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/gameScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/rankCalculate.cs">
     <Files>
-      <File FileName="Assets/Scripts/gameScript.cs" Line="208" Column="29" />
-      <File FileName="Assets/Scripts/viewLoad.cs" />
-      <File FileName="Assets/Scripts/randomLoader.cs" />
+      <File FileName="Assets/Scripts/viewLoad.cs" Line="9" Column="12" />
+      <File FileName="Assets/Scripts/gameScript.cs" Line="49" Column="1" />
+      <File FileName="Assets/Scripts/targetBehaviour.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/goodTargetBehaviour.cs" Line="8" Column="5" />
+      <File FileName="Assets/Scripts/rankCalculate.cs" Line="7" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +13,7 @@
           <Node name="Climate-Control" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="gameScript.cs" selected="True" />
+                <Node name="rankCalculate.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5804998-dc9f-457d-bd6b-63e3559efb15" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="768f4693-eb70-42ef-b6ee-9525260299c0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

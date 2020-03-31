@@ -340,10 +340,10 @@ RectTransform:
   m_Father: {fileID: 87837337}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.44749925, y: 0.78000003}
-  m_AnchorMax: {x: 0.54724896, y: 0.85333335}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: -0.000030517578}
+  m_AnchorMin: {x: 0.43174812, y: 0.78000003}
+  m_AnchorMax: {x: 0.56974965, y: 0.88400006}
+  m_AnchoredPosition: {x: -0.9720001, y: 0.6499939}
+  m_SizeDelta: {x: 2.0999985, y: 1.2999992}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360202517
 MonoBehaviour:
@@ -358,18 +358,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 485933238}
   - component: {fileID: 485933237}
   m_Layer: 5
-  m_Name: img_Heart3
+  m_Name: img_Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1bfd4837cf74952832cd16cbdc5fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destination: MainMenu
+  Destination: 
   FadeView: {fileID: 1002468423}
   FadeViewObj: {fileID: 1002468420}
 --- !u!1 &841047685
@@ -1181,7 +1181,6 @@ GameObject:
   - component: {fileID: 1243662517}
   - component: {fileID: 1243662516}
   - component: {fileID: 1243662519}
-  - component: {fileID: 1243662520}
   m_Layer: 5
   m_Name: btn_PauseButton
   m_TagString: Untagged
@@ -1275,7 +1274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1312,9 +1311,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minutesPassed: 0
   secondsPassed: 0
-  isPaused: 0
+  minuteString: 
+  secondString: 
   gameStarted: 0
+  pauseFadeAway: 0
+  pauseButtonFadeAway: 0
   playerScore: 0
+  displayedScore: 0
+  livesLeft: 0
+  goodObjects: 0
   timeLabel: {fileID: 360202517}
   scoreLabel: {fileID: 1755615900}
   pauseTimeLabel: {fileID: 2124383324}
@@ -1324,21 +1329,23 @@ MonoBehaviour:
   starsAnim1: {fileID: 841047687}
   starsAnim2: {fileID: 1282000381}
   countdownTimer: {fileID: 1680459509}
-  pauseButton: {fileID: 1243662514}
---- !u!114 &1243662520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243662514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 891ee80901d3c4afe8a8f0b04865fbd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPaused: {fileID: 0}
-  gameStarted: {fileID: 0}
+  pauseButton: {fileID: 1243662516}
+  lifeOneIcon: {fileID: 485933235}
+  lifeTwoIcon: {fileID: 1715200954}
+  lifeThreeIcon: {fileID: 1597887089}
+  pauseButtonSprite: {fileID: 21300000, guid: 27c8d0282a1494044a63b700d6b92d36, type: 3}
+  playButtonSprite: {fileID: 21300000, guid: 638bf9b5d1b4647db82d8d3824b224d2, type: 3}
+  playPauseImage: {fileID: 1243662517}
+  FadeView: {fileID: 1002468423}
+  Earth: {fileID: 1144909482}
+  HealthyEarth: {fileID: 21300000, guid: 339da659e6dc647aa9de1db1147b6320, type: 3}
+  OKEarth: {fileID: 21300000, guid: 3c69e9104cd454116aebb7a4c52c8a59, type: 3}
+  UnhealthyEarth: {fileID: 21300000, guid: 9af80ec1459e146f495cda60380aad9f, type: 3}
+  targetsTapped: 0
+  targets: []
+  spawnRate: 0
+  time: 0
+  objectPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1254394402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1508,7 @@ GameObject:
   - component: {fileID: 1597887092}
   - component: {fileID: 1597887091}
   m_Layer: 5
-  m_Name: img_Heart1
+  m_Name: img_Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,10 +1744,10 @@ RectTransform:
   m_Father: {fileID: 87837337}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3995008, y: 0.148}
-  m_AnchorMax: {x: 0.596, y: 0.216}
-  m_AnchoredPosition: {x: -0.5040436, y: 0}
-  m_SizeDelta: {x: 0.08000183, y: 0.099975586}
+  m_AnchorMin: {x: 0.3995008, y: 0.120000005}
+  m_AnchorMax: {x: 0.5945008, y: 0.216}
+  m_AnchoredPosition: {x: -0.27198792, y: 0.024993896}
+  m_SizeDelta: {x: 0.54407, y: 0.049988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755615900
 MonoBehaviour:
@@ -1755,18 +1762,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_Color: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
