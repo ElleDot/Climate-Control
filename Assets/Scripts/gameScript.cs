@@ -21,6 +21,9 @@ public class gameScript : MonoBehaviour {
     public int displayedScore;
     public int livesLeft;
     public int goodObjects;
+    public int maxCombo;
+    public int currentCombo;
+    public int targetsDestroyed;
 
     //GameObjects and other elements
     public Text timeLabel;
@@ -58,6 +61,9 @@ public class gameScript : MonoBehaviour {
         minutesPassed = 0;
         secondsPassed = 0;
         livesLeft = 3;
+        currentCombo = 0;
+        maxCombo = 0;
+        targetsDestroyed = 0;
 
         pauseButton.interactable = false;
         playPauseImage = GetComponent<Image>();
@@ -125,6 +131,7 @@ public class gameScript : MonoBehaviour {
 
         //Test to see if the target has been tapped, so long as game is not paused.
         if (!isPaused) {
+
             if (Input.GetMouseButtonDown(0)) {
 
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -133,7 +140,11 @@ public class gameScript : MonoBehaviour {
                 if (Physics.Raycast(ray, out hit)) {
                     //Target has been tapped and can be destroyed
                     Destroy(hit.collider.gameObject);
-
+                    targetsDestroyed++;
+                    currentCombo++;
+                    if (currentCombo > maxCombo) {
+                        maxCombo++;
+                    }
                     playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
 
                 }
@@ -253,6 +264,10 @@ public class gameScript : MonoBehaviour {
     public void goodObjectHit() {
 
         goodObjects++;
+        currentCombo++;
+        if (currentCombo > maxCombo) {
+            maxCombo++;
+        }
 
         if (goodObjects % 10 == 0) {
 
@@ -278,6 +293,8 @@ public class gameScript : MonoBehaviour {
         livesLeft -= 1;
         playerScore = Mathf.RoundToInt((float)playerScore * 0.95f);
 
+        currentCombo = 0;
+
         //Check how many lives the player now has
         if (livesLeft == 2) {
             lifeThreeIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
@@ -294,8 +311,12 @@ public class gameScript : MonoBehaviour {
             pauseButton.interactable = false;
 
             //Save values for the game over screen
+            PlayerPrefs.SetInt("second", secondsPassed);
+            PlayerPrefs.SetInt("minute", minutesPassed);
+            PlayerPrefs.SetInt("score", playerScore);
+            PlayerPrefs.SetInt("combo", maxCombo);
+            PlayerPrefs.SetInt("targets", targetsDestroyed);
 
-            Invoke("loadGameOver", 1);
             StartCoroutine(gameOverFade(true));
 
         }
