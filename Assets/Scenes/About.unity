@@ -1016,10 +1016,10 @@ RectTransform:
   m_Father: {fileID: 2079437385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.02332712, y: 0.7466194}
-  m_AnchorMax: {x: 0.97667295, y: 0.9227828}
-  m_AnchoredPosition: {x: 1.0999146, y: 0.14030457}
-  m_SizeDelta: {x: -2.2, y: -1.2999992}
+  m_AnchorMin: {x: 0.02332712, y: 0.7333038}
+  m_AnchorMax: {x: 0.97667295, y: 0.90500003}
+  m_AnchoredPosition: {x: 1.0999146, y: 0}
+  m_SizeDelta: {x: -2.2, y: 0.70000076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730153816
 MonoBehaviour:
@@ -1542,7 +1542,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 30
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1554,10 +1554,10 @@ MonoBehaviour:
     to affect the earth
 
 
-    You lose a life when a ''bad'' object hits Earth.
+    - You lose a life when a ''bad'' object hits Earth.
 
-    You
-    gain a life when 10 ''good'' objects hit Earth.'
+    -
+    You gain a life when 10 ''good'' objects hit Earth.'
 --- !u!222 &1192648928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2221,10 +2221,10 @@ RectTransform:
   m_Father: {fileID: 1200918710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.02332712, y: 0.7466194}
-  m_AnchorMax: {x: 0.9778365, y: 0.9205655}
-  m_AnchoredPosition: {x: -0.5, y: 0.44430542}
-  m_SizeDelta: {x: -1, y: -2.3000002}
+  m_AnchorMin: {x: 0.02332712, y: 0.72}
+  m_AnchorMax: {x: 0.9778365, y: 0.90065193}
+  m_AnchoredPosition: {x: -0.5, y: 0.5}
+  m_SizeDelta: {x: -1, y: -5.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1674010329
 MonoBehaviour:
@@ -2257,7 +2257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '- OBJECTIVES -'
+  m_Text: How to Play
 --- !u!222 &1674010330
 CanvasRenderer:
   m_ObjectHideFlags: 0
