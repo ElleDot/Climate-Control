@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\aboutScript.cs" />
     <Compile Include="Assets\Scripts\gameScript.cs" />
     <Compile Include="Assets\Scripts\highScoreLoad.cs" />
     <Compile Include="Assets\Scripts\rankCalculate.cs" />
