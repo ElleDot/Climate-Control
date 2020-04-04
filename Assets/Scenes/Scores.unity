@@ -443,16 +443,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: bbf1053d2a2734a778e4872b87dd2f48, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 626,828 | 00:00 | 04/04/2020
 --- !u!222 &606098487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -999,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.81600004, y: 0.15021078}
   m_AnchorMax: {x: 0.90969163, y: 0.35217935}
-  m_AnchoredPosition: {x: -0.59402466, y: 0}
+  m_AnchoredPosition: {x: -0.59399414, y: 0}
   m_SizeDelta: {x: 0.23999023, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027840305
@@ -1218,7 +1218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1471283, y: 0.12324216}
   m_AnchorMax: {x: 0.81600004, y: 0.35217935}
-  m_AnchoredPosition: {x: -0.65200806, y: 0.5}
+  m_AnchoredPosition: {x: -0.6520386, y: 0.5}
   m_SizeDelta: {x: -2.933998, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213647704
@@ -1243,16 +1243,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: bbf1053d2a2734a778e4872b87dd2f48, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 626,828 | 00:00 | 04/04/2020
 --- !u!222 &1213647705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1471283, y: 0.4282736}
   m_AnchorMax: {x: 0.81600004, y: 0.6256637}
-  m_AnchoredPosition: {x: -0.5299988, y: 0.040000916}
+  m_AnchoredPosition: {x: -0.52996826, y: 0.040000916}
   m_SizeDelta: {x: -0.35998535, y: 0.049999237}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790185658
@@ -1636,16 +1636,16 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: bbf1053d2a2734a778e4872b87dd2f48, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 626,828 | 00:00 | 04/04/2020
 --- !u!222 &1790185659
 CanvasRenderer:
   m_ObjectHideFlags: 0

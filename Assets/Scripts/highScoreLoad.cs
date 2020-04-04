@@ -89,6 +89,21 @@ public class highScoreLoad : MonoBehaviour {
         highScore2Label.text = highScore2.ToString("n0") + " | " + hs2mString + ":" + hs2sString + " | " + highScore2Date;
         highScore3Label.text = highScore3.ToString("n0") + " | " + hs3mString + ":" + hs3sString + " | " + highScore3Date;
 
+        if (highScore1 == 0) {
+            highScore1Label.text = "No score yet!";
+            highScore1RankImage.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        }
+
+        if(highScore2 == 0) {
+            highScore2Label.text = "No score yet!";
+            highScore2RankImage.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        }
+
+        if (highScore3 == 0) {
+            highScore3Label.text = "No score yet!";
+            highScore3RankImage.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+        }
+
         if (highScore1 >= 50000){
             // S RANK
             highScore1RankImage.sprite = SRank;

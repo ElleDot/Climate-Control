@@ -253,7 +253,9 @@ public class rankCalculate: MonoBehaviour {
     void Update() {
 
         if (scoreReady) {
-            if (displayedScore + 25 < gameScore) {
+            if (displayedScore + 250 < gameScore) {
+                displayedScore += 250;
+            } else if(displayedScore + 25 < gameScore) {
                 displayedScore += 25;
             } else if (displayedScore < gameScore) {
                 displayedScore++;
@@ -310,21 +312,19 @@ public class rankCalculate: MonoBehaviour {
 
         if (multiReady) {
 
-            i++;
-            if (i % 5 == 0) {
+            if (displayedMultiplier > 0)
+            {
+                displayedMultiplier -= 1;
+                displayedFinalScore += (gameScore * 0.01f);
+                multipliedScoreLabel.text = displayedFinalScore.ToString("n0") + " + " + displayedMultiplier.ToString("f0") + "%";
+            }
+            else
+            {
+                multipliedScoreLabel.text = displayedFinalScore.ToString("n0");
+                multiReady = false;
+                backButton.interactable = true;
 
-                if (displayedMultiplier > 0) {
-                    displayedMultiplier -= 1;
-                    displayedFinalScore += (gameScore * 0.01f);
-                    multipliedScoreLabel.text = displayedFinalScore.ToString("n0") + " + " + displayedMultiplier.ToString("f0") + "%";
-                } else {
-                    multipliedScoreLabel.text = displayedFinalScore.ToString("n0");
-                    multiReady = false;
-                    backButton.interactable = true;
-
-                    Invoke("rankCheck", 1);
-                }
-
+                Invoke("rankCheck", 1);
             }
 
         }

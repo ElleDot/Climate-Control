@@ -162,6 +162,7 @@ RectTransform:
   - {fileID: 1597887090}
   - {fileID: 1715200955}
   - {fileID: 485933236}
+  - {fileID: 1112057647}
   - {fileID: 1002468421}
   m_Father: {fileID: 1871290580}
   m_RootOrder: 0
@@ -522,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.046499297, y: 0.35200003}
   m_AnchorMax: {x: 0.29825038, y: 0.448}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0, y: 0.0000076294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &599035430
@@ -599,7 +600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.716, y: 0.7053334}
   m_AnchorMax: {x: 0.9737525, y: 0.78533334}
-  m_AnchoredPosition: {x: -0.7000122, y: 0.040023804}
+  m_AnchoredPosition: {x: -0.7000122, y: 0.040039062}
   m_SizeDelta: {x: -1.2999992, y: 0.099999905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &627305377
@@ -887,7 +888,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 87837337}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1021,6 +1022,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087346620}
+  m_CullTransparentMesh: 0
+--- !u!1 &1112057646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112057647}
+  - component: {fileID: 1112057649}
+  - component: {fileID: 1112057648}
+  m_Layer: 5
+  m_Name: txt_AlertMessage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1112057647
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112057646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 87837337}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.046291664, y: 0.87200004}
+  m_AnchorMax: {x: 0.356, y: 0.94514817}
+  m_AnchoredPosition: {x: -0.2401123, y: 0.38006592}
+  m_SizeDelta: {x: -0.480011, y: -0.7999878}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1112057648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112057646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bbf1053d2a2734a778e4872b87dd2f48, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1112057649
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112057646}
   m_CullTransparentMesh: 0
 --- !u!1 &1123520260
 GameObject:
@@ -1323,6 +1401,9 @@ MonoBehaviour:
   maxCombo: 0
   currentCombo: 0
   targetsDestroyed: 0
+  goodHitSound: {fileID: 0}
+  badHitSound: {fileID: 0}
+  audioSource: {fileID: 0}
   timeLabel: {fileID: 360202517}
   scoreLabel: {fileID: 1755615900}
   pauseTimeLabel: {fileID: 2124383324}
@@ -1344,7 +1425,7 @@ MonoBehaviour:
   HealthyEarth: {fileID: 21300000, guid: 339da659e6dc647aa9de1db1147b6320, type: 3}
   OKEarth: {fileID: 21300000, guid: 3c69e9104cd454116aebb7a4c52c8a59, type: 3}
   UnhealthyEarth: {fileID: 21300000, guid: 9af80ec1459e146f495cda60380aad9f, type: 3}
-  targetsTapped: 0
+  alertText: {fileID: 1112057648}
   targets: []
   spawnRate: 0
   time: 0
@@ -1976,7 +2057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.046499297, y: 0.448}
   m_AnchorMax: {x: 0.29825038, y: 0.6013333}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.0000076293945}
   m_SizeDelta: {x: -0.000061035, y: 0.000015259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124383324

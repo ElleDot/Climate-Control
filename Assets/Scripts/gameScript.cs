@@ -25,6 +25,11 @@ public class gameScript : MonoBehaviour {
     public int currentCombo;
     public int targetsDestroyed;
 
+    //Sounds for the game
+    public AudioSource goodHitSound;
+    public AudioSource badHitSound;
+    public AudioSource audioSource;
+
     //GameObjects and other elements
     public Text timeLabel;
     public Text scoreLabel;
@@ -47,9 +52,9 @@ public class gameScript : MonoBehaviour {
     public Sprite HealthyEarth;
     public Sprite OKEarth;
     public Sprite UnhealthyEarth;
+    public Text alertText;
 
     //Variables for sorting hit detection and platforms
-    public int targetsTapped;
     public GameObject[] targets;
     public float spawnRate;
     public float time;
@@ -127,30 +132,38 @@ public class gameScript : MonoBehaviour {
                 time = 0.0f;
             }
 
-        }
+            if (!isPaused) {
 
-        //Test to see if the target has been tapped, so long as game is not paused.
-        if (!isPaused) {
+                //Test to see if the target has been tapped
+                if (Input.GetMouseButtonDown(0)) {
 
-            if (Input.GetMouseButtonDown(0)) {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit hit;
 
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
+                    if (Physics.Raycast(ray, out hit)) {
 
-                if (Physics.Raycast(ray, out hit)) {
-                    //Target has been tapped and can be destroyed
-                    Destroy(hit.collider.gameObject);
-                    targetsDestroyed++;
-                    currentCombo++;
-                    if (currentCombo > maxCombo) {
-                        maxCombo++;
+                        targetBehaviour target = hit.collider.GetComponent<targetBehaviour>();
+
+                        if (target != null) {
+
+                            //Check target type here
+                            if (target._targetType == TargetType.GOOD) {
+                                goodTargetTapped();
+                            } else {
+                                badTargetTapped();
+                            }
+
+                        }
+
+                        //Target has been tapped and can be destroyed
+                        Destroy(hit.collider.gameObject);
+
                     }
-                    playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
-
                 }
+
             }
-        }
-        
+
+        } 
 
         if (displayedScore < playerScore) {
 
@@ -205,7 +218,6 @@ public class gameScript : MonoBehaviour {
         //Decrease the duration between spawns every 10s
         if (secondsPassed % 10 == 0) {
             print("DIFFICULTY INCREASED!");
-            print(spawnRate);
             if (spawnRate > 0.4f) {
                 spawnRate -= 0.2f;
             }
@@ -252,6 +264,7 @@ public class gameScript : MonoBehaviour {
 
     }
 
+    //Called after the pause menu has either been called or dismissed
     public void enableDisable() {
 
         if (!pauseFadeAway) {
@@ -263,15 +276,33 @@ public class gameScript : MonoBehaviour {
 
     public void goodObjectHit() {
 
+        //Add 1 to good objects
+        //Add 1 to current combo, checking to see if it's the highest
+
         goodObjects++;
         currentCombo++;
         if (currentCombo > maxCombo) {
             maxCombo++;
         }
 
+        if (currentCombo % 25 == 0) {
+            alertText.text = currentCombo.ToString("f0") + " target streak!";
+            StopCoroutine(alertFade(true));
+            StartCoroutine(alertFade(true));
+        }
+
+        //Check if that was the 10th good object
         if (goodObjects % 10 == 0) {
 
-            livesLeft++;
+            if (livesLeft < 3) {
+
+                livesLeft++;
+
+                alertText.text = "1UP!";
+                StopCoroutine(alertFade(true));
+                StartCoroutine(alertFade(true));
+
+            }
 
             if (livesLeft == 3) {
                 lifeThreeIcon.GetComponent<Image>().color = new Color(255, 255, 255, 1);
@@ -287,13 +318,64 @@ public class gameScript : MonoBehaviour {
 
     }
 
+    public void badTargetTapped() {
+
+        //Add 1 to targets destroyed
+        //Add 1 to current combo, checking to see if it's the highest
+        //Add points
+
+        targetsDestroyed++;
+        currentCombo++;
+        if (currentCombo > maxCombo) {
+            maxCombo++;
+        }
+        playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
+
+        if (currentCombo % 10 == 0) {
+            alertText.text = currentCombo.ToString("f0") + " target streak!";
+            StopCoroutine(alertFade(true));
+            StartCoroutine(alertFade(true));
+        }
+
+    }
+
+    public void goodTargetTapped() {
+
+        //Add 1 to targets destroyed
+        //Combo break
+        //Subtract points
+
+        targetsDestroyed++;
+        currentCombo = 0;
+        playerScore -= (50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60))))*3;
+
+        //Check if player's score is below 0, then set it to 0 if it is
+        if (playerScore < 0) {
+            playerScore = 0;
+        }
+
+        //alertText.text = "Combo breaker!";
+        alertText.text = "grep!";
+        StopCoroutine(alertFade(true));
+        StartCoroutine(alertFade(true));
+
+    }
+
     //Called when a negative target reaches earth
     public void lifeLost() {
+
+        //Subtract life
+        //Subtract 5% of player's current score
+        //Combo break
 
         livesLeft -= 1;
         playerScore = Mathf.RoundToInt((float)playerScore * 0.95f);
 
         currentCombo = 0;
+
+        alertText.text = "Combo breaker!";
+        StopCoroutine(alertFade(true));
+        StartCoroutine(alertFade(true));
 
         //Check how many lives the player now has
         if (livesLeft == 2) {
@@ -302,7 +384,8 @@ public class gameScript : MonoBehaviour {
         } else if (livesLeft == 1) {
             lifeTwoIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
             Earth.sprite = UnhealthyEarth;
-        } else {
+        } else if (livesLeft == 0) {
+            //Begin game over process
             lifeOneIcon.GetComponent<Image>().color = new Color(255, 255, 255, 0.5f);
             print("GAME OVER!");
             CancelInvoke("timerIncrement");
@@ -333,6 +416,21 @@ public class gameScript : MonoBehaviour {
         }
 
         SceneManager.LoadScene("GameOver");
+
+    }
+
+    IEnumerator alertFade(bool alertFade) {
+
+        alertText.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+        //yield return new WaitForSeconds(1);
+
+        // increasing i
+        for (float i = 1.0f; i >= 0; i -= Time.deltaTime) {
+            // set color with i as alpha
+            alertText.color = new Color(1.0f, 1.0f, 1.0f, i);
+            yield return null;
+        }
 
     }
 
