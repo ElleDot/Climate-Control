@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\rankCalculate.cs" />
     <Compile Include="Assets\Scripts\targetBehaviour.cs" />
     <Compile Include="Assets\Scripts\viewLoad.cs" />
+    <Compile Include="Assets\Scripts\welcomeScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/louis/Documents/UNI/APP DESIGN AND DEVELOPMENT/Climate-Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

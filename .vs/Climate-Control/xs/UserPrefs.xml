@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{F13E22A4-6E87-DFFA-A97A-060C8E37B03F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/aboutScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/welcomeScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/viewLoad.cs" Line="9" Column="12" />
-      <File FileName="Assets/Scripts/gameScript.cs" Line="149" Column="53" />
+      <File FileName="Assets/Scripts/viewLoad.cs" Line="21" Column="6" />
+      <File FileName="Assets/Scripts/gameScript.cs" Line="247" Column="13" />
       <File FileName="Assets/Scripts/targetBehaviour.cs" Line="10" Column="35" />
       <File FileName="Assets/Scripts/rankCalculate.cs" Line="95" Column="33" />
-      <File FileName="Assets/Scripts/highScoreLoad.cs" Line="94" Column="23" />
-      <File FileName="Assets/Scripts/aboutScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/highScoreLoad.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/aboutScript.cs" Line="59" Column="24" />
+      <File FileName="Assets/Scripts/welcomeScript.cs" Line="7" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,7 @@
           <Node name="Climate-Control" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="aboutScript.cs" selected="True" />
+                <Node name="welcomeScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
