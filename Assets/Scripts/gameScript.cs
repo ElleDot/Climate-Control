@@ -8,6 +8,16 @@ using UnityEngine.Video;
 
 public class gameScript : MonoBehaviour {
 
+    //The sources for all the game audio, with the mute checker
+    public AudioSource targetTappedSound;
+    public AudioSource oneUpSound;
+    public AudioSource comboSound;
+    public AudioSource comboBrokenSound;
+    public AudioSource badSound;
+    public AudioSource gameOverSound;
+
+    private bool isMuted;
+
     //Variables for the core game and timer mechanics
     public int minutesPassed;
     public int secondsPassed;
@@ -24,11 +34,6 @@ public class gameScript : MonoBehaviour {
     public int maxCombo;
     public int currentCombo;
     public int targetsDestroyed;
-
-    //Sounds for the game
-    public AudioSource goodHitSound;
-    public AudioSource badHitSound;
-    public AudioSource audioSource;
 
     //GameObjects and other elements
     public Text timeLabel;
@@ -63,6 +68,8 @@ public class gameScript : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
+        isMuted = (PlayerPrefs.GetInt("isMuted") != 0);
+
         minutesPassed = 0;
         secondsPassed = 0;
         livesLeft = 3;
@@ -76,7 +83,7 @@ public class gameScript : MonoBehaviour {
         //Load Platforms into Array
         targets = Resources.LoadAll<GameObject>("targets");
         // Set Spawn Rate
-        spawnRate = 2.0f;
+        spawnRate = 1.8f;
 
         Invoke("countdownStart", 1);
 
@@ -91,6 +98,7 @@ public class gameScript : MonoBehaviour {
         StartCoroutine(FadeButton(true));
         pauseButton.interactable = true;
         gameStarted = true;
+        isPaused = false;
 
     }
 
@@ -122,7 +130,7 @@ public class gameScript : MonoBehaviour {
                 }
 
                 //Generate Random Number and Instantiate Associated Array Item
-                int objectNum = UnityEngine.Random.Range(0, 7);
+                int objectNum = UnityEngine.Random.Range(0, 9);
                 GameObject target = Instantiate(targets[objectNum]);
 
                 //platform.AddComponent<yMovement>();
@@ -212,8 +220,10 @@ public class gameScript : MonoBehaviour {
         //Decrease the duration between spawns every 10s
         if (secondsPassed % 5 == 0) {
             print("DIFFICULTY INCREASED!");
-            if (spawnRate > 0.2f) {
+            if (spawnRate > 1.0f) {
                 spawnRate -= 0.1f;
+            } else if (spawnRate > 0.2f) {
+                spawnRate -= 0.05f;
             }
         }
 
@@ -277,9 +287,19 @@ public class gameScript : MonoBehaviour {
         }
 
         if (currentCombo % 10 == 0) {
+
+            if (!isMuted) {
+                comboSound.Play(0);
+            }
+            
             alertText.text = currentCombo.ToString("f0") + " target streak!";
             StopCoroutine(alertFade(true));
             StartCoroutine(alertFade(true));
+        } else {
+            if (!isMuted) {
+                targetTappedSound.Play(0);
+            }
+            
         }
 
         //Check if that was the 10th good object
@@ -288,6 +308,10 @@ public class gameScript : MonoBehaviour {
             if (livesLeft < 3) {
 
                 livesLeft++;
+
+                if (!isMuted) {
+                    oneUpSound.Play(0);
+                }
 
                 alertText.text = "1UP!";
                 StopCoroutine(alertFade(true));
@@ -309,7 +333,7 @@ public class gameScript : MonoBehaviour {
 
     }
 
-    public void badTargetTapped() {
+    public void badTargetTapped() {        
 
         //Add 1 to targets destroyed
         //Add 1 to current combo, checking to see if it's the highest
@@ -323,21 +347,33 @@ public class gameScript : MonoBehaviour {
         playerScore += 50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60)));
 
         if (currentCombo % 10 == 0) {
+
+            if (!isMuted) {
+                comboSound.Play(0);
+            }
+            
             alertText.text = currentCombo.ToString("f0") + " target streak!";
             StopCoroutine(alertFade(true));
             StartCoroutine(alertFade(true));
+
+        } else {
+
+            if (!isMuted) {
+                targetTappedSound.Play(0);
+            }
+
         }
 
     }
 
-    public void goodTargetTapped() {
+    public void goodTargetTapped()
+    {
 
         //Add 1 to targets destroyed
         //Combo break
         //Subtract points
 
         targetsDestroyed++;
-        currentCombo = 0;
         playerScore -= (50 + ((minutesPassed + 1) * (secondsPassed + (minutesPassed * 60))))*3;
 
         //Check if player's score is below 0, then set it to 0 if it is
@@ -345,9 +381,24 @@ public class gameScript : MonoBehaviour {
             playerScore = 0;
         }
 
-        alertText.text = "Combo breaker!";
-        StopCoroutine(alertFade(true));
-        StartCoroutine(alertFade(true));
+        if (currentCombo >= 10) {
+
+            if (!isMuted) {
+                comboBrokenSound.Play(0);
+            } 
+            
+            alertText.text = "Combo breaker!";
+            StopCoroutine(alertFade(true));
+            StartCoroutine(alertFade(true));
+        } else {
+
+            if (!isMuted) {
+                badSound.Play(0);
+            }
+
+        }
+
+        currentCombo = 0;
 
     }
 
@@ -361,11 +412,25 @@ public class gameScript : MonoBehaviour {
         livesLeft -= 1;
         playerScore = Mathf.RoundToInt((float)playerScore * 0.95f);
 
-        currentCombo = 0;
+        if (currentCombo >= 10) {
 
-        alertText.text = "Combo breaker!";
-        StopCoroutine(alertFade(true));
-        StartCoroutine(alertFade(true));
+            if (!isMuted) {
+                comboBrokenSound.Play(0);
+            }
+
+            alertText.text = "Combo breaker!";
+            StopCoroutine(alertFade(true));
+            StartCoroutine(alertFade(true));
+
+        } else {
+
+            if (!isMuted) {
+                badSound.Play(0);
+            }
+
+        }
+
+        currentCombo = 0;
 
         //Check how many lives the player now has
         if (livesLeft == 2) {
@@ -382,6 +447,10 @@ public class gameScript : MonoBehaviour {
             gameStarted = false;
             StartCoroutine(FadeButton(false));
             pauseButton.interactable = false;
+
+            if (!isMuted) {
+                gameOverSound.Play(0);
+            }
 
             //Save values for the game over screen
             PlayerPrefs.SetInt("second", secondsPassed);

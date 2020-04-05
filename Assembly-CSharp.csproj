@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\gameScript.cs" />
     <Compile Include="Assets\Scripts\highScoreLoad.cs" />
     <Compile Include="Assets\Scripts\rankCalculate.cs" />
+    <Compile Include="Assets\Scripts\soundScript.cs" />
     <Compile Include="Assets\Scripts\targetBehaviour.cs" />
     <Compile Include="Assets\Scripts\viewLoad.cs" />
     <Compile Include="Assets\Scripts\welcomeScript.cs" />

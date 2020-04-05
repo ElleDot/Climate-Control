@@ -16,6 +16,7 @@ public class rankCalculate: MonoBehaviour {
     public string currentDate;
 
     public int i;
+    private bool isMuted;
 
     public int highScore1;
     public int highScore2;
@@ -59,7 +60,7 @@ public class rankCalculate: MonoBehaviour {
     public Text destroyedMultiplierLabel;
     public Text comboMultiplierLabel;
     public Text rankText;
-
+    public Button backButton;
     public Image rankImage;
     public Image PBIcon;
 
@@ -71,10 +72,15 @@ public class rankCalculate: MonoBehaviour {
     public Sprite ERank;
     public Sprite FRank;
 
-    public Button backButton;
+    public AudioSource highScoreSound;
+    public AudioSource countSound;
+    public AudioSource rankSound;
+    public AudioSource preMultiSound;
 
     // Start is called before the first frame update
     void Start() {
+
+        isMuted = (PlayerPrefs.GetInt("isMuted") != 0);
 
         backButton.interactable = false;
 
@@ -145,6 +151,9 @@ public class rankCalculate: MonoBehaviour {
     public void finalScoreAdd() {
         multipliedScoreLabel.text = gameScore.ToString("n0") + " + " + totalMultiplier.ToString("f0") + "%";
         Invoke("finalScoreWithMulti", 1);
+        if (!isMuted) {
+            preMultiSound.Play(0);
+        }
     }
 
     public void finalScoreWithMulti() {
@@ -157,22 +166,22 @@ public class rankCalculate: MonoBehaviour {
         rankImage.GetComponent<Image>().color = new Color(255, 255, 255, 1.0f);
         rankText.color = new Color(255, 255, 255, 1.0f);
 
-        if (displayedFinalScore >= 50000) {
+        if (displayedFinalScore >= 100000) {
             // S RANK
             rankImage.sprite = SRank;
-        } else if (displayedFinalScore >= 40000 && displayedFinalScore < 50000) {
+        } else if (displayedFinalScore >= 75000 && displayedFinalScore < 100000) {
             // A RANK
             rankImage.sprite = ARank;
-        } else if(displayedFinalScore >= 25000 && displayedFinalScore < 40000) {
+        } else if(displayedFinalScore >= 50000 && displayedFinalScore < 75000) {
             // B RANK
             rankImage.sprite = BRank;
-        } else if(displayedFinalScore >= 15000 && displayedFinalScore < 25000) {
+        } else if(displayedFinalScore >= 35000 && displayedFinalScore < 50000) {
             // C RANK
             rankImage.sprite = CRank;
-        } else if (displayedFinalScore >= 7500 && displayedFinalScore < 15000) {
+        } else if (displayedFinalScore >= 10000 && displayedFinalScore < 35000) {
             // D RANK
             rankImage.sprite = DRank;
-        } else if (displayedFinalScore >= 2500 && displayedFinalScore < 7500) {
+        } else if (displayedFinalScore >= 2500 && displayedFinalScore < 10000) {
             //E RANK
             rankImage.sprite = ERank;
         } else {
@@ -195,13 +204,18 @@ public class rankCalculate: MonoBehaviour {
         highScore3Date = PlayerPrefs.GetString("hs3d", "");
 
         currentDate = System.DateTime.Now.ToString("MM/dd/yyyy");
-        
+
+        if (!isMuted) {
+            rankSound.Play(0);
+        }
+
         if (displayedFinalScore > highScore1) {
+
+            Invoke("highScoreAchieved", 1);
 
             print("SAVED SCORE AS NUMBER 1, SHIFTED OLD 1 TO NEW 2 AND OLD 2 TO NEW 3.");
 
             //High score achieved :)
-            PBIcon.GetComponent<Image>().color = new Color(255, 255, 255, 1.0f);
             PlayerPrefs.SetInt("hs1", (int)displayedFinalScore);
             PlayerPrefs.SetInt("hs1s", displayedSeconds);
             PlayerPrefs.SetInt("hs1m", displayedMinutes);
@@ -249,11 +263,28 @@ public class rankCalculate: MonoBehaviour {
 
     }
 
+    void highScoreAchieved() {
+
+        if (!isMuted) {
+            highScoreSound.Play(0);
+        }
+
+        PBIcon.GetComponent<Image>().color = new Color(255, 255, 255, 1.0f);
+
+    }
+
     // Update is called once per frame
     void Update() {
 
         if (scoreReady) {
-            if (displayedScore + 250 < gameScore) {
+
+            if (!isMuted) {
+                countSound.Play(0);
+            }
+
+            if (displayedScore + 25000 < gameScore) {
+                displayedScore += 2500;
+            } else if (displayedScore + 250 < gameScore) {
                 displayedScore += 250;
             } else if(displayedScore + 25 < gameScore) {
                 displayedScore += 25;
@@ -267,10 +298,17 @@ public class rankCalculate: MonoBehaviour {
         }
 
         if (timeReady) {
+
+            if (!isMuted) {
+                countSound.Play(0);
+            }
+
             if (displayedMinutes < minutesPassed) {
                 displayedMinutes++;
             } else {
-                if(displayedSeconds < secondsPassed) {
+                if (displayedSeconds + 30 < secondsPassed) {
+                    displayedSeconds += 2;
+                } else if (displayedSeconds < secondsPassed) {
                     displayedSeconds++;
                 } else {
                     Invoke("targetsDestroyedAdd", 1);
@@ -284,7 +322,14 @@ public class rankCalculate: MonoBehaviour {
         }
 
         if (targetsReady) {
-            if (displayedTargets < targetsDestroyed) {
+
+            if (!isMuted) {
+                countSound.Play(0);
+            }
+
+            if (displayedTargets + 50 < targetsDestroyed) {
+                displayedTargets += 3;
+            } else if (displayedTargets < targetsDestroyed) {
                 displayedTargets++;
             } else {
                 Invoke("maxComboAdd", 1);
@@ -298,7 +343,14 @@ public class rankCalculate: MonoBehaviour {
         }
 
         if (comboReady) {
-            if (displayedCombo < maxCombo) {
+
+            if (!isMuted) {
+                countSound.Play(0);
+            }
+
+            if (displayedCombo + 50 < maxCombo) {
+                displayedCombo += 3;
+            } else if(displayedCombo < maxCombo) {
                 displayedCombo++;
             } else {
                 Invoke("finalScoreAdd", 1);
@@ -312,14 +364,15 @@ public class rankCalculate: MonoBehaviour {
 
         if (multiReady) {
 
-            if (displayedMultiplier > 0)
-            {
+            if (!isMuted) {
+                countSound.Play(0);
+            }
+
+            if (displayedMultiplier > 0) {
                 displayedMultiplier -= 1;
                 displayedFinalScore += (gameScore * 0.01f);
                 multipliedScoreLabel.text = displayedFinalScore.ToString("n0") + " + " + displayedMultiplier.ToString("f0") + "%";
-            }
-            else
-            {
+            } else {
                 multipliedScoreLabel.text = displayedFinalScore.ToString("n0");
                 multiReady = false;
                 backButton.interactable = true;

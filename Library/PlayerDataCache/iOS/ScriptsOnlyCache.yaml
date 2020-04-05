@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - gameScript
     - highScoreLoad
     - rankCalculate
+    - soundScript
     - targetBehaviour
     - viewLoad
     - welcomeScript
@@ -67,6 +68,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -124,6 +127,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -157,6 +162,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -177,6 +186,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -238,6 +249,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -259,53 +272,6 @@ ScriptsOnlyBuild:
     - Class: 329
       Script: {instanceID: 0}
     Assets/Scenes/Options.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11134}
-    - Class: 114
-      Script: {instanceID: 11350}
-    - Class: 114
-      Script: {instanceID: 11764}
-    - Class: 114
-      Script: {instanceID: 12104}
-    - Class: 114
-      Script: {instanceID: 12160}
-    - Class: 114
-      Script: {instanceID: 12666}
-    - Class: 114
-      Script: {instanceID: 13042}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 328
-      Script: {instanceID: 0}
-    - Class: 329
-      Script: {instanceID: 0}
-    Assets/Scenes/PlayMenu.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -342,6 +308,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -399,6 +367,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12666}
     - Class: 114
       Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 27098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -450,7 +420,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 96918d4544f7734199519f980e5239cb
+      Hash: 48b0f6232604d7794394de3a69ce6ec6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: rankCalculate
@@ -576,7 +546,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: dfe95a3342d7fde4986b3fb74039c0da
+      Hash: 9b2cfac6572ed47e931475b55e7571f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gameScript
@@ -880,13 +850,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 36c5a2799adbda771b082166653ab8cf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: soundScript
   platform: 9
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/About.unity
   - Assets/Scenes/Options.unity
   - Assets/Scenes/Scores.unity
-  - Assets/Scenes/PlayMenu.unity
   - Assets/Scenes/GameScene.unity
   - Assets/Scenes/GameOver.unity
   playerPath: /Users/louis/Desktop/kool

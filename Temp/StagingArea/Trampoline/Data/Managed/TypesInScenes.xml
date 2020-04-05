@@ -47,6 +47,7 @@
 		<type fullname="gameScript" preserve="nothing"/>
 		<type fullname="highScoreLoad" preserve="nothing"/>
 		<type fullname="rankCalculate" preserve="nothing"/>
+		<type fullname="soundScript" preserve="nothing"/>
 		<type fullname="targetBehaviour" preserve="nothing"/>
 		<type fullname="viewLoad" preserve="nothing"/>
 		<type fullname="welcomeScript" preserve="nothing"/>

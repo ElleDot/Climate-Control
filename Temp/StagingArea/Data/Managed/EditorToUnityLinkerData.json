@@ -10,7 +10,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -39,7 +38,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -66,8 +64,8 @@
             "usedInScenes": [
                 "Assets/Scenes/MainMenu.unity",
                 "Assets/Scenes/About.unity",
+                "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -82,7 +80,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -97,7 +94,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -110,8 +106,8 @@
             "usedInScenes": [
                 "Assets/Scenes/MainMenu.unity",
                 "Assets/Scenes/About.unity",
+                "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -126,7 +122,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -141,7 +136,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -261,7 +255,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -285,7 +278,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -300,7 +292,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -315,7 +306,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -330,7 +320,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -345,7 +334,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -369,7 +357,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -384,7 +371,7 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
+                "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
         },
@@ -398,7 +385,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -413,7 +399,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -428,7 +413,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -443,7 +427,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -458,7 +441,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -473,7 +455,7 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
+                "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
         },
@@ -496,7 +478,7 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
+                "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
         },
@@ -510,7 +492,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -523,8 +504,8 @@
             "usedInScenes": [
                 "Assets/Scenes/MainMenu.unity",
                 "Assets/Scenes/About.unity",
+                "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -539,7 +520,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -554,7 +534,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -569,7 +548,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -584,7 +562,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -599,7 +576,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -614,7 +590,6 @@
                 "Assets/Scenes/About.unity",
                 "Assets/Scenes/Options.unity",
                 "Assets/Scenes/Scores.unity",
-                "Assets/Scenes/PlayMenu.unity",
                 "Assets/Scenes/GameScene.unity",
                 "Assets/Scenes/GameOver.unity"
             ]
@@ -653,6 +628,13 @@
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
             "fullManagedTypeName": "rankCalculate",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "soundScript",
             "moduleName": "",
             "usedInScenes": []
         },
