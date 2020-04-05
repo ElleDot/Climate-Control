@@ -34,21 +34,22 @@
 		<type fullname="UnityEngine.Collider" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
+		<type fullname="UnityEngine.Font" preserve="nothing"/>
 		<type fullname="UnityEngine.RectTransform" preserve="nothing"/>
 		<type fullname="UnityEngine.CanvasRenderer" preserve="nothing"/>
 		<type fullname="UnityEngine.Texture" preserve="nothing"/>
 		<type fullname="UnityEngine.Video.VideoClip" preserve="nothing"/>
 		<type fullname="UnityEngine.Camera" preserve="nothing"/>
 		<type fullname="UnityEngine.SpriteRenderer" preserve="nothing"/>
-		<type fullname="UnityEngine.Font" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="aboutScript" preserve="nothing"/>
 		<type fullname="gameScript" preserve="nothing"/>
-		<type fullname="goodTargetBehaviour" preserve="nothing"/>
 		<type fullname="highScoreLoad" preserve="nothing"/>
 		<type fullname="rankCalculate" preserve="nothing"/>
 		<type fullname="targetBehaviour" preserve="nothing"/>
 		<type fullname="viewLoad" preserve="nothing"/>
+		<type fullname="welcomeScript" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="UnityEngine.UI">
 		<type fullname="UnityEngine.EventSystems.EventSystem" preserve="nothing"/>

@@ -122,7 +122,7 @@ public class gameScript : MonoBehaviour {
                 }
 
                 //Generate Random Number and Instantiate Associated Array Item
-                int objectNum = UnityEngine.Random.Range(0, 2);
+                int objectNum = UnityEngine.Random.Range(0, 7);
                 GameObject target = Instantiate(targets[objectNum]);
 
                 //platform.AddComponent<yMovement>();
@@ -163,22 +163,16 @@ public class gameScript : MonoBehaviour {
 
             }
 
-        } 
+        }
 
-        if (displayedScore < playerScore) {
-
-            displayedScore += 2;
-            if (displayedScore > playerScore) {
-                displayedScore = playerScore;
-            }
-                
+        if (displayedScore + 1000 < playerScore) {
+            displayedScore += 250;
+        } else if (displayedScore + 100 < playerScore) {
+            displayedScore += 25;
+        } else if (displayedScore < playerScore) {
+            displayedScore++;
         } else if (displayedScore > playerScore) {
-
-            displayedScore -= 1;
-            if (displayedScore < playerScore) {
-                displayedScore = playerScore;
-            }
-
+            displayedScore -= 1; 
         }
 
         scoreLabel.text = displayedScore.ToString("n0") + "pts";
@@ -216,15 +210,12 @@ public class gameScript : MonoBehaviour {
         playerScore += (minutesPassed * 20) + 20;
 
         //Decrease the duration between spawns every 10s
-        if (secondsPassed % 10 == 0) {
+        if (secondsPassed % 5 == 0) {
             print("DIFFICULTY INCREASED!");
-            if (spawnRate > 0.4f) {
-                spawnRate -= 0.2f;
+            if (spawnRate > 0.2f) {
+                spawnRate -= 0.1f;
             }
         }
-
-        //scoreLabel.text = playerScore.ToString("n0") + "pts";
-        //pauseScoreLabel.text = playerScore.ToString("n0") + "pts";
 
     }
 
@@ -285,7 +276,7 @@ public class gameScript : MonoBehaviour {
             maxCombo++;
         }
 
-        if (currentCombo % 25 == 0) {
+        if (currentCombo % 10 == 0) {
             alertText.text = currentCombo.ToString("f0") + " target streak!";
             StopCoroutine(alertFade(true));
             StartCoroutine(alertFade(true));
@@ -354,8 +345,7 @@ public class gameScript : MonoBehaviour {
             playerScore = 0;
         }
 
-        //alertText.text = "Combo breaker!";
-        alertText.text = "grep!";
+        alertText.text = "Combo breaker!";
         StopCoroutine(alertFade(true));
         StartCoroutine(alertFade(true));
 

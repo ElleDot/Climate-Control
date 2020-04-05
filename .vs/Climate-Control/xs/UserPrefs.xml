@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{F13E22A4-6E87-DFFA-A97A-060C8E37B03F}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/welcomeScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/gameScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/viewLoad.cs" Line="21" Column="6" />
-      <File FileName="Assets/Scripts/gameScript.cs" Line="247" Column="13" />
-      <File FileName="Assets/Scripts/targetBehaviour.cs" Line="10" Column="35" />
-      <File FileName="Assets/Scripts/rankCalculate.cs" Line="95" Column="33" />
-      <File FileName="Assets/Scripts/highScoreLoad.cs" Line="4" Column="1" />
-      <File FileName="Assets/Scripts/aboutScript.cs" Line="59" Column="24" />
-      <File FileName="Assets/Scripts/welcomeScript.cs" Line="7" Column="15" />
+      <File FileName="Assets/Scripts/viewLoad.cs" Line="26" Column="20" />
+      <File FileName="Assets/Scripts/gameScript.cs" Line="369" Column="1" />
+      <File FileName="Assets/Scripts/targetBehaviour.cs" />
+      <File FileName="Assets/Scripts/rankCalculate.cs" />
+      <File FileName="Assets/Scripts/highScoreLoad.cs" />
+      <File FileName="Assets/Scripts/aboutScript.cs" />
+      <File FileName="Assets/Scripts/welcomeScript.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +15,7 @@
           <Node name="Climate-Control" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="welcomeScript.cs" selected="True" />
+                <Node name="gameScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9a6f796f-1b70-4426-9ffb-7a14d42ee731" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="af270998-b452-4e01-9f19-0be2c408235c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

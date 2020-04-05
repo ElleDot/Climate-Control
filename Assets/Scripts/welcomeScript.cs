@@ -17,7 +17,7 @@ public class welcomeScript : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
 
-        //isFirstLoad = PlayerPrefs.GetInt("isFirstLoad", 0);
+        isFirstLoad = PlayerPrefs.GetInt("isFirstLoad", 0);
 
         if (isFirstLoad == 0) {
             welcomeView.SetActive(true);
@@ -56,8 +56,6 @@ public class welcomeScript : MonoBehaviour {
 
     IEnumerator FadeWelcome(bool welcomeFadeInOut) {
 
-        confirmButtonObject.SetActive(false);
-
         // fadeout for welcome box
         for (float i = 1; i >= 0; i -= Time.deltaTime)
         {
@@ -72,6 +70,7 @@ public class welcomeScript : MonoBehaviour {
         }
 
         welcomeView.SetActive(false);
+        confirmButtonObject.SetActive(false);
 
     }
 
